@@ -32,4 +32,36 @@ var data = {
 };
 
 //List everyone and for each of them, list the names of who they follow and who follows them
-for (name in )
+var friendList = function (data){
+  output = {}
+
+  //the below code creates objects for each person in the social network
+  for (friend in data){
+    var name = (data[friend]['name'])
+    output[name] = {}
+
+    //below code adds followers
+    var friendIdArray = data[friend]['follows']
+    var followersNames = []
+
+    var theyFollow = []
+    output[name]['followedBy'] = []
+
+    for (i = 0; i < friendIdArray.length; i++){
+
+      //follows
+      var userId = friendIdArray[i]
+      var nameOfFollower = data[userId]['name']
+      followersNames.push(nameOfFollower)
+      //follows
+
+
+    }
+    output[name]['follows'] = followersNames
+  }
+  console.log(output)
+}
+
+friendList(data)
+
+//
