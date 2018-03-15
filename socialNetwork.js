@@ -56,6 +56,7 @@ var friendList = function (data){
       //follows
 
 
+
     }
     output[name]['follows'] = followersNames
   }
